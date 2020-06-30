@@ -1,0 +1,1021 @@
+{
+  "contractName": "ERC1155MetadataMock",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "URI",
+      "type": "event"
+    },
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "uri",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_newBaseMetadataURI",
+          "type": "string"
+        }
+      ],
+      "name": "setBaseMetadataURI",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "_tokenIDs",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "logURIsMock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"URI\",\"type\":\"event\"},{\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_tokenIDs\",\"type\":\"uint256[]\"}],\"name\":\"logURIsMock\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_newBaseMetadataURI\",\"type\":\"string\"}],\"name\":\"setBaseMetadataURI\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"uri\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"logURIsMock(uint256[])\":{\"params\":{\"_tokenIDs\":\"Array of IDs of tokens to log default URI\"}},\"setBaseMetadataURI(string)\":{\"params\":{\"_newBaseMetadataURI\":\"New base URL of token's URI\"}},\"uri(uint256)\":{\"details\":\"URIs are defined in RFC 3986.     URIs are assumed to be deterministically generated based on token ID     Token IDs are assumed to be represented in their hex format in URIs\",\"return\":\"URI string\"}}},\"userdoc\":{\"methods\":{\"logURIsMock(uint256[])\":{\"notice\":\"Will emit default URI log event for corresponding token _id\"},\"setBaseMetadataURI(string)\":{\"notice\":\"Will update the base URL of token's URI\"},\"uri(uint256)\":{\"notice\":\"A distinct Uniform Resource Identifier (URI) for a given token.\"}}}},\"settings\":{\"compilationTarget\":{\"/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/ERC1155MetadataMock.sol\":\"ERC1155MetadataMock\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/aggar/ERC1155/truffle-env/contracts/interfaces/IERC1155.sol\":{\"keccak256\":\"0x13c59845e00020a273411fffa78885ef42ee5dc2db66c0808fde3f3938cb465d\",\"urls\":[\"bzz-raw://a1525eb831cd6b6a552cfe4a0d5b9d0fe3bd684cb3d2420499ea8f551617913a\",\"dweb:/ipfs/Qmcf8R6o7Pg2eirCUL4J6JRc5unwX9Jj8q9T1KQSNtBh2D\"]},\"/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/ERC1155MetadataMock.sol\":{\"keccak256\":\"0x93ff83dc92becb175a20be692546c578eb983a44441915c98aa35175dd0af27e\",\"urls\":[\"bzz-raw://9c095f3d21e1b956dae513ce96f4d2327d98c6333790356ca0f1d13d923d445b\",\"dweb:/ipfs/QmYA6aE4h5gqJSu86mBQ11dNJxpnD2GCmV9QupkMdjrHmT\"]},\"/C/Users/aggar/ERC1155/truffle-env/contracts/tokens/ERC1155/ERC1155Metadata.sol\":{\"keccak256\":\"0xd4ec01a2709c44d665f06df9e09e24c15d2b815f4f69c0d53992e4b6d780dfb0\",\"urls\":[\"bzz-raw://8989b5a135e5c5d48a1b3ff66b468c557c422195b1f0ac57c4ab859e40956c0e\",\"dweb:/ipfs/Qmf86iqy26Ni4K4bZJCTELMgsHgBkm14QeRjtba6Hm5Ntz\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506109b8806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630e89341c1461007c5780631ea430d4146100ac5780637e518ec8146100c8575b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161007390610824565b60405180910390fd5b610096600480360361009191908101906105dd565b6100e4565b6040516100a39190610802565b60405180910390f35b6100c660048036036100c1919081019061055b565b610118565b005b6100e260048036036100dd919081019061059c565b610124565b005b606060006100f183610130565b6040516020016101029291906107d3565b6040516020818303038152906040529050919050565b61012181610263565b50565b61012d816103b0565b50565b60606000821415610178576040518060400160405280600181526020017f3000000000000000000000000000000000000000000000000000000000000000815250905061025e565b6000829050600083905060005b600083146101a7578080600101915050600a838161019f57fe5b049250610185565b6060816040519080825280601f01601f1916602001820160405280156101dc5781602001600182028038833980820191505090505b50905060006001830390505b6000841461025557600a84816101fa57fe5b0660300160f81b8282806001900393508151811061021457fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600a848161024d57fe5b0493506101e8565b81955050505050505b919050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102fb5780601f106102d0576101008083540402835291602001916102fb565b820191906000526020600020905b8154815290600101906020018083116102de57829003601f168201915b50505050509050606060008090505b83518110156103aa578261033085838151811061032357fe5b6020026020010151610130565b6040516020016103419291906107a4565b604051602081830303815290604052915083818151811061035e57fe5b60200260200101517f6bb7ff708619ba0610cba295a58592e0451dee2622938c8755667688daf3529b836040516103959190610802565b60405180910390a2808060010191505061030a565b50505050565b80600090805190602001906103c69291906103ca565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040b57805160ff1916838001178555610439565b82800160010185558215610439579182015b8281111561043857825182559160200191906001019061041d565b5b509050610446919061044a565b5090565b61046c91905b80821115610468576000816000905550600101610450565b5090565b90565b600082601f83011261048057600080fd5b813561049361048e82610871565b610844565b915081818352602084019350602081019050838560208402820111156104b857600080fd5b60005b838110156104e857816104ce8882610546565b8452602084019350602083019250506001810190506104bb565b5050505092915050565b600082601f83011261050357600080fd5b813561051661051182610899565b610844565b9150808252602083016020830185838301111561053257600080fd5b61053d83828461090b565b50505092915050565b6000813590506105558161095e565b92915050565b60006020828403121561056d57600080fd5b600082013567ffffffffffffffff81111561058757600080fd5b6105938482850161046f565b91505092915050565b6000602082840312156105ae57600080fd5b600082013567ffffffffffffffff8111156105c857600080fd5b6105d4848285016104f2565b91505092915050565b6000602082840312156105ef57600080fd5b60006105fd84828501610546565b91505092915050565b6000610611826108da565b61061b81856108e5565b935061062b81856020860161091a565b6106348161094d565b840191505092915050565b600061064a826108da565b61065481856108f6565b935061066481856020860161091a565b80840191505092915050565b60008154600181166000811461068d57600181146106b2576106f6565b607f600283041661069e81876108f6565b955060ff19831686528086019350506106f6565b600282046106c081876108f6565b95506106cb856108c5565b60005b828110156106ed578154818901526001820191506020810190506106ce565b82880195505050505b505092915050565b600061070b6023836108e5565b91507f455243313135354d657461646174614d6f636b3a20494e56414c49445f4d455460008301527f484f4400000000000000000000000000000000000000000000000000000000006020830152604082019050919050565b60006107716005836108f6565b91507f2e6a736f6e0000000000000000000000000000000000000000000000000000006000830152600582019050919050565b60006107b0828561063f565b91506107bc828461063f565b91506107c782610764565b91508190509392505050565b60006107df8285610670565b91506107eb828461063f565b91506107f682610764565b91508190509392505050565b6000602082019050818103600083015261081c8184610606565b905092915050565b6000602082019050818103600083015261083d816106fe565b9050919050565b6000604051905081810181811067ffffffffffffffff8211171561086757600080fd5b8060405250919050565b600067ffffffffffffffff82111561088857600080fd5b602082029050602081019050919050565b600067ffffffffffffffff8211156108b057600080fd5b601f19601f8301169050602081019050919050565b60008190508160005260206000209050919050565b600081519050919050565b600082825260208201905092915050565b600081905092915050565b6000819050919050565b82818337600083830152505050565b60005b8381101561093857808201518184015260208101905061091d565b83811115610947576000848401525b50505050565b6000601f19601f8301169050919050565b61096781610901565b811461097257600080fd5b5056fea365627a7a72315820629132ffe1f144abd1e42f0ca3ceab5340ecf49c389eb96cb933cb2b5b9968ee6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630e89341c1461007c5780631ea430d4146100ac5780637e518ec8146100c8575b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161007390610824565b60405180910390fd5b610096600480360361009191908101906105dd565b6100e4565b6040516100a39190610802565b60405180910390f35b6100c660048036036100c1919081019061055b565b610118565b005b6100e260048036036100dd919081019061059c565b610124565b005b606060006100f183610130565b6040516020016101029291906107d3565b6040516020818303038152906040529050919050565b61012181610263565b50565b61012d816103b0565b50565b60606000821415610178576040518060400160405280600181526020017f3000000000000000000000000000000000000000000000000000000000000000815250905061025e565b6000829050600083905060005b600083146101a7578080600101915050600a838161019f57fe5b049250610185565b6060816040519080825280601f01601f1916602001820160405280156101dc5781602001600182028038833980820191505090505b50905060006001830390505b6000841461025557600a84816101fa57fe5b0660300160f81b8282806001900393508151811061021457fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600a848161024d57fe5b0493506101e8565b81955050505050505b919050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102fb5780601f106102d0576101008083540402835291602001916102fb565b820191906000526020600020905b8154815290600101906020018083116102de57829003601f168201915b50505050509050606060008090505b83518110156103aa578261033085838151811061032357fe5b6020026020010151610130565b6040516020016103419291906107a4565b604051602081830303815290604052915083818151811061035e57fe5b60200260200101517f6bb7ff708619ba0610cba295a58592e0451dee2622938c8755667688daf3529b836040516103959190610802565b60405180910390a2808060010191505061030a565b50505050565b80600090805190602001906103c69291906103ca565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040b57805160ff1916838001178555610439565b82800160010185558215610439579182015b8281111561043857825182559160200191906001019061041d565b5b509050610446919061044a565b5090565b61046c91905b80821115610468576000816000905550600101610450565b5090565b90565b600082601f83011261048057600080fd5b813561049361048e82610871565b610844565b915081818352602084019350602081019050838560208402820111156104b857600080fd5b60005b838110156104e857816104ce8882610546565b8452602084019350602083019250506001810190506104bb565b5050505092915050565b600082601f83011261050357600080fd5b813561051661051182610899565b610844565b9150808252602083016020830185838301111561053257600080fd5b61053d83828461090b565b50505092915050565b6000813590506105558161095e565b92915050565b60006020828403121561056d57600080fd5b600082013567ffffffffffffffff81111561058757600080fd5b6105938482850161046f565b91505092915050565b6000602082840312156105ae57600080fd5b600082013567ffffffffffffffff8111156105c857600080fd5b6105d4848285016104f2565b91505092915050565b6000602082840312156105ef57600080fd5b60006105fd84828501610546565b91505092915050565b6000610611826108da565b61061b81856108e5565b935061062b81856020860161091a565b6106348161094d565b840191505092915050565b600061064a826108da565b61065481856108f6565b935061066481856020860161091a565b80840191505092915050565b60008154600181166000811461068d57600181146106b2576106f6565b607f600283041661069e81876108f6565b955060ff19831686528086019350506106f6565b600282046106c081876108f6565b95506106cb856108c5565b60005b828110156106ed578154818901526001820191506020810190506106ce565b82880195505050505b505092915050565b600061070b6023836108e5565b91507f455243313135354d657461646174614d6f636b3a20494e56414c49445f4d455460008301527f484f4400000000000000000000000000000000000000000000000000000000006020830152604082019050919050565b60006107716005836108f6565b91507f2e6a736f6e0000000000000000000000000000000000000000000000000000006000830152600582019050919050565b60006107b0828561063f565b91506107bc828461063f565b91506107c782610764565b91508190509392505050565b60006107df8285610670565b91506107eb828461063f565b91506107f682610764565b91508190509392505050565b6000602082019050818103600083015261081c8184610606565b905092915050565b6000602082019050818103600083015261083d816106fe565b9050919050565b6000604051905081810181811067ffffffffffffffff8211171561086757600080fd5b8060405250919050565b600067ffffffffffffffff82111561088857600080fd5b602082029050602081019050919050565b600067ffffffffffffffff8211156108b057600080fd5b601f19601f8301169050602081019050919050565b60008190508160005260206000209050919050565b600081519050919050565b600082825260208201905092915050565b600081905092915050565b6000819050919050565b82818337600083830152505050565b60005b8381101561093857808201518184015260208101905061091d565b83811115610947576000848401525b50505050565b6000601f19601f8301169050919050565b61096781610901565b811461097257600080fd5b5056fea365627a7a72315820629132ffe1f144abd1e42f0ca3ceab5340ecf49c389eb96cb933cb2b5b9968ee6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "116:1033:14:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;116:1033:14;;;;;;;",
+  "deployedSourceMap": "116:1033:14:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;116:1033:14;;;;;;;;;;;;;;;;;;;;;;;;;;1095:45;;;;;;;;;;;;;;;;;;;884:148:22;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;840:94:14;;;;;;;;;;;;;;;;:::i;:::-;;425:129;;;;;;;;;;;;;;;;:::i;:::-;;884:148:22;931:13;984:15;1001:14;1011:3;1001:9;:14::i;:::-;967:58;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;967:58:22;;;953:73;;884:148;;;:::o;840:94:14:-;903:25;918:9;903:14;:25::i;:::-;840:94;:::o;425:129::-;502:46;528:19;502:25;:46::i;:::-;425:129;:::o;2144:539:22:-;2198:27;2244:1;2238:2;:7;2234:40;;;2256:10;;;;;;;;;;;;;;;;;;;;;2234:40;2282:9;2294:2;2282:14;;2303:10;2316:2;2303:15;;2325:11;2373:53;2385:1;2380;:6;2373:53;;2397:5;;;;;;;2416:2;2411:7;;;;;;;;;2373:53;;;2434:17;2464:3;2454:14;;;;;;;;;;;;;;;;;;;;;;;;;29:1:-1;21:6;17:14;116:4;104:10;96:6;87:34;147:4;139:6;135:17;125:27;;0:156;2454:14:22;;;;2434:34;;2475:9;2493:1;2487:3;:7;2475:19;;2537:87;2550:1;2544:2;:7;2537:87;;2595:2;2590;:7;;;;;;2585:2;:12;2574:25;;2562:4;2567:3;;;;;;;2562:9;;;;;;;;;;;:37;;;;;;;;;;;2614:2;2608:8;;;;;;;;;2537:87;;;2672:4;2658:19;;;;;;;2144:539;;;;:::o;1318:327::-;1380:21;1404:15;1380:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1426:22;1462:9;1474:1;1462:13;;1457:183;1481:9;:16;1477:1;:20;1457:183;;;1548:7;1557:23;1567:9;1577:1;1567:12;;;;;;;;;;;;;;1557:9;:23::i;:::-;1531:59;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;1531:59:22;;;1513:78;;1619:9;1629:1;1619:12;;;;;;;;;;;;;;1605:27;1609:8;1605:27;;;;;;;;;;;;;;;1499:3;;;;;;;1457:183;;;;1318:327;;;:::o;1780:123::-;1878:19;1860:15;:37;;;;;;;;;;;;:::i;:::-;;1780:123;:::o;116:1033:14:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;23:707:-1:-;;140:3;133:4;125:6;121:17;117:27;107:2;;158:1;155;148:12;107:2;195:6;182:20;217:80;232:64;289:6;232:64;;;217:80;;;208:89;;314:5;339:6;332:5;325:21;369:4;361:6;357:17;347:27;;391:4;386:3;382:14;375:21;;444:6;491:3;483:4;475:6;471:17;466:3;462:27;459:36;456:2;;;508:1;505;498:12;456:2;533:1;518:206;543:6;540:1;537:13;518:206;;;601:3;623:37;656:3;644:10;623:37;;;618:3;611:50;684:4;679:3;675:14;668:21;;712:4;707:3;703:14;696:21;;575:149;565:1;562;558:9;553:14;;518:206;;;522:14;100:630;;;;;;;;739:442;;841:3;834:4;826:6;822:17;818:27;808:2;;859:1;856;849:12;808:2;896:6;883:20;918:65;933:49;975:6;933:49;;;918:65;;;909:74;;1003:6;996:5;989:21;1039:4;1031:6;1027:17;1072:4;1065:5;1061:16;1107:3;1098:6;1093:3;1089:16;1086:25;1083:2;;;1124:1;1121;1114:12;1083:2;1134:41;1168:6;1163:3;1158;1134:41;;;801:380;;;;;;;;1189:130;;1269:6;1256:20;1247:29;;1281:33;1308:5;1281:33;;;1241:78;;;;;1326:377;;1455:2;1443:9;1434:7;1430:23;1426:32;1423:2;;;1471:1;1468;1461:12;1423:2;1534:1;1523:9;1519:17;1506:31;1557:18;1549:6;1546:30;1543:2;;;1589:1;1586;1579:12;1543:2;1609:78;1679:7;1670:6;1659:9;1655:22;1609:78;;;1599:88;;1485:208;1417:286;;;;;1710:347;;1824:2;1812:9;1803:7;1799:23;1795:32;1792:2;;;1840:1;1837;1830:12;1792:2;1903:1;1892:9;1888:17;1875:31;1926:18;1918:6;1915:30;1912:2;;;1958:1;1955;1948:12;1912:2;1978:63;2033:7;2024:6;2013:9;2009:22;1978:63;;;1968:73;;1854:193;1786:271;;;;;2064:241;;2168:2;2156:9;2147:7;2143:23;2139:32;2136:2;;;2184:1;2181;2174:12;2136:2;2219:1;2236:53;2281:7;2272:6;2261:9;2257:22;2236:53;;;2226:63;;2198:97;2130:175;;;;;2312:347;;2424:39;2457:5;2424:39;;;2475:71;2539:6;2534:3;2475:71;;;2468:78;;2551:52;2596:6;2591:3;2584:4;2577:5;2573:16;2551:52;;;2624:29;2646:6;2624:29;;;2619:3;2615:39;2608:46;;2404:255;;;;;;2666:360;;2796:39;2829:5;2796:39;;;2847:89;2929:6;2924:3;2847:89;;;2840:96;;2941:52;2986:6;2981:3;2974:4;2967:5;2963:16;2941:52;;;3014:6;3009:3;3005:16;2998:23;;2776:250;;;;;;3058:884;;3195:5;3189:12;3229:1;3218:9;3214:17;3242:1;3237:268;;;;3516:1;3511:425;;;;3207:729;;3237:268;3315:4;3311:1;3300:9;3296:17;3292:28;3334:89;3416:6;3411:3;3334:89;;;3327:96;;3461:4;3457:9;3446;3442:25;3437:3;3430:38;3491:6;3486:3;3482:16;3475:23;;3244:261;3237:268;;3511:425;3580:1;3569:9;3565:17;3596:89;3678:6;3673:3;3596:89;;;3589:96;;3707:38;3739:5;3707:38;;;3761:1;3769:130;3783:6;3780:1;3777:13;3769:130;;;3848:7;3842:14;3838:1;3833:3;3829:11;3822:35;3889:1;3880:7;3876:15;3865:26;;3805:4;3802:1;3798:12;3793:17;;3769:130;;;3922:6;3917:3;3913:16;3906:23;;3518:418;;;3207:729;;3165:777;;;;;;3951:372;;4111:67;4175:2;4170:3;4111:67;;;4104:74;;4211:34;4207:1;4202:3;4198:11;4191:55;4280:5;4275:2;4270:3;4266:12;4259:27;4314:2;4309:3;4305:12;4298:19;;4097:226;;;;4332:339;;4510:84;4592:1;4587:3;4510:84;;;4503:91;;4627:7;4623:1;4618:3;4614:11;4607:28;4663:1;4658:3;4654:11;4647:18;;4496:175;;;;4679:694;;4974:95;5065:3;5056:6;4974:95;;;4967:102;;5087:95;5178:3;5169:6;5087:95;;;5080:102;;5200:148;5344:3;5200:148;;;5193:155;;5365:3;5358:10;;4955:418;;;;;;5380:688;;5672:92;5760:3;5751:6;5672:92;;;5665:99;;5782:95;5873:3;5864:6;5782:95;;;5775:102;;5895:148;6039:3;5895:148;;;5888:155;;6060:3;6053:10;;5653:415;;;;;;6075:301;;6213:2;6202:9;6198:18;6190:26;;6263:9;6257:4;6253:20;6249:1;6238:9;6234:17;6227:47;6288:78;6361:4;6352:6;6288:78;;;6280:86;;6184:192;;;;;6383:407;;6574:2;6563:9;6559:18;6551:26;;6624:9;6618:4;6614:20;6610:1;6599:9;6595:17;6588:47;6649:131;6775:4;6649:131;;;6641:139;;6545:245;;;;6797:256;;6859:2;6853:9;6843:19;;6897:4;6889:6;6885:17;6996:6;6984:10;6981:22;6960:18;6948:10;6945:34;6942:62;6939:2;;;7017:1;7014;7007:12;6939:2;7037:10;7033:2;7026:22;6837:216;;;;;7060:304;;7219:18;7211:6;7208:30;7205:2;;;7251:1;7248;7241:12;7205:2;7286:4;7278:6;7274:17;7266:25;;7349:4;7343;7339:15;7331:23;;7142:222;;;;7371:322;;7515:18;7507:6;7504:30;7501:2;;;7547:1;7544;7537:12;7501:2;7614:4;7610:9;7603:4;7595:6;7591:17;7587:33;7579:41;;7678:4;7672;7668:15;7660:23;;7438:255;;;;7700:158;;7768:3;7760:11;;7805:3;7802:1;7795:14;7837:4;7834:1;7824:18;7816:26;;7754:104;;;;7865:122;;7959:5;7953:12;7943:22;;7924:63;;;;7995:163;;8110:6;8105:3;8098:19;8147:4;8142:3;8138:14;8123:29;;8091:67;;;;;8167:145;;8303:3;8288:18;;8281:31;;;;;8320:72;;8382:5;8371:16;;8365:27;;;;8400:145;8481:6;8476:3;8471;8458:30;8537:1;8528:6;8523:3;8519:16;8512:27;8451:94;;;;8554:268;8619:1;8626:101;8640:6;8637:1;8634:13;8626:101;;;8716:1;8711:3;8707:11;8701:18;8697:1;8692:3;8688:11;8681:39;8662:2;8659:1;8655:10;8650:15;;8626:101;;;8742:6;8739:1;8736:13;8733:2;;;8807:1;8798:6;8793:3;8789:16;8782:27;8733:2;8603:219;;;;;8830:97;;8918:2;8914:7;8909:2;8902:5;8898:14;8894:28;8884:38;;8878:49;;;;8935:117;9004:24;9022:5;9004:24;;;8997:5;8994:35;8984:2;;9043:1;9040;9033:12;8984:2;8978:74;",
+  "source": "pragma solidity ^0.5.16;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"../tokens/ERC1155/ERC1155Metadata.sol\";\r\n\r\n\r\ncontract ERC1155MetadataMock is ERC1155Metadata {\r\n\r\n  /***********************************|\r\n  |         Base URI Functions        |\r\n  |__________________________________*/\r\n\r\n  /**\r\n   * @notice Will update the base URL of token's URI\r\n   * @param _newBaseMetadataURI New base URL of token's URI\r\n   */\r\n  function setBaseMetadataURI(string memory _newBaseMetadataURI) public {\r\n    super._setBaseMetadataURI(_newBaseMetadataURI);\r\n  }\r\n\r\n\r\n  /***********************************|\r\n  |         Log URI Functions         |\r\n  |__________________________________*/\r\n\r\n  /**\r\n   * @notice Will emit default URI log event for corresponding token _id\r\n   * @param _tokenIDs Array of IDs of tokens to log default URI\r\n   */\r\n  function logURIsMock(uint256[] memory _tokenIDs) public {\r\n    super._logURIs(_tokenIDs);\r\n  }\r\n\r\n\r\n  /***********************************|\r\n  |       Unsupported Functions       |\r\n  |__________________________________*/\r\n\r\n  function () external {\r\n    revert('ERC1155MetadataMock: INVALID_METHOD');\r\n  }\r\n}",
+  "sourcePath": "C:\\Users\\aggar\\ERC1155\\truffle-env\\contracts\\mocks\\ERC1155MetadataMock.sol",
+  "ast": {
+    "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/ERC1155MetadataMock.sol",
+    "exportedSymbols": {
+      "ERC1155MetadataMock": [
+        1547
+      ]
+    },
+    "id": 1548,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1509,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "id": 1510,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "26:33:14"
+      },
+      {
+        "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/tokens/ERC1155/ERC1155Metadata.sol",
+        "file": "../tokens/ERC1155/ERC1155Metadata.sol",
+        "id": 1511,
+        "nodeType": "ImportDirective",
+        "scope": 1548,
+        "sourceUnit": 4113,
+        "src": "63:47:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1512,
+              "name": "ERC1155Metadata",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4112,
+              "src": "148:15:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC1155Metadata_$4112",
+                "typeString": "contract ERC1155Metadata"
+              }
+            },
+            "id": 1513,
+            "nodeType": "InheritanceSpecifier",
+            "src": "148:15:14"
+          }
+        ],
+        "contractDependencies": [
+          4112
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1547,
+        "linearizedBaseContracts": [
+          1547,
+          4112
+        ],
+        "name": "ERC1155MetadataMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1524,
+              "nodeType": "Block",
+              "src": "495:59:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1521,
+                        "name": "_newBaseMetadataURI",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1515,
+                        "src": "528:19:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1518,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5024,
+                        "src": "502:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_ERC1155MetadataMock_$1547",
+                          "typeString": "contract super ERC1155MetadataMock"
+                        }
+                      },
+                      "id": 1520,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_setBaseMetadataURI",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4032,
+                      "src": "502:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 1522,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "502:46:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1523,
+                  "nodeType": "ExpressionStatement",
+                  "src": "502:46:14"
+                }
+              ]
+            },
+            "documentation": "@notice Will update the base URL of token's URI\n@param _newBaseMetadataURI New base URL of token's URI",
+            "id": 1525,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setBaseMetadataURI",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1515,
+                  "name": "_newBaseMetadataURI",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1525,
+                  "src": "453:33:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1514,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "453:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "452:35:14"
+            },
+            "returnParameters": {
+              "id": 1517,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "495:0:14"
+            },
+            "scope": 1547,
+            "src": "425:129:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1537,
+              "nodeType": "Block",
+              "src": "896:38:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1534,
+                        "name": "_tokenIDs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1528,
+                        "src": "918:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1531,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5024,
+                        "src": "903:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_ERC1155MetadataMock_$1547",
+                          "typeString": "contract super ERC1155MetadataMock"
+                        }
+                      },
+                      "id": 1533,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_logURIs",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4022,
+                      "src": "903:14:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256[] memory)"
+                      }
+                    },
+                    "id": 1535,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "903:25:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1536,
+                  "nodeType": "ExpressionStatement",
+                  "src": "903:25:14"
+                }
+              ]
+            },
+            "documentation": "@notice Will emit default URI log event for corresponding token _id\n@param _tokenIDs Array of IDs of tokens to log default URI",
+            "id": 1538,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "logURIsMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1528,
+                  "name": "_tokenIDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1538,
+                  "src": "861:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1526,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "861:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1527,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "861:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "860:28:14"
+            },
+            "returnParameters": {
+              "id": 1530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "896:0:14"
+            },
+            "scope": 1547,
+            "src": "840:94:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1545,
+              "nodeType": "Block",
+              "src": "1088:58:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "455243313135354d657461646174614d6f636b3a20494e56414c49445f4d4554484f44",
+                        "id": 1542,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1102:37:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6eae07edeb9b35d3be1e583f801a201410fcfe23eb21aaa403808ef33bdd25fb",
+                          "typeString": "literal_string \"ERC1155MetadataMock: INVALID_METHOD\""
+                        },
+                        "value": "ERC1155MetadataMock: INVALID_METHOD"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_6eae07edeb9b35d3be1e583f801a201410fcfe23eb21aaa403808ef33bdd25fb",
+                          "typeString": "literal_string \"ERC1155MetadataMock: INVALID_METHOD\""
+                        }
+                      ],
+                      "id": 1541,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4962,
+                        4963
+                      ],
+                      "referencedDeclaration": 4963,
+                      "src": "1095:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1543,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1095:45:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1544,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1095:45:14"
+                }
+              ]
+            },
+            "documentation": "*********************************|\n|       Unsupported Functions       |\n|__________________________________",
+            "id": 1546,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1539,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1076:2:14"
+            },
+            "returnParameters": {
+              "id": 1540,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1088:0:14"
+            },
+            "scope": 1547,
+            "src": "1067:79:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1548,
+        "src": "116:1033:14"
+      }
+    ],
+    "src": "0:1149:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/ERC1155MetadataMock.sol",
+    "exportedSymbols": {
+      "ERC1155MetadataMock": [
+        1547
+      ]
+    },
+    "id": 1548,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1509,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "id": 1510,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "26:33:14"
+      },
+      {
+        "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/tokens/ERC1155/ERC1155Metadata.sol",
+        "file": "../tokens/ERC1155/ERC1155Metadata.sol",
+        "id": 1511,
+        "nodeType": "ImportDirective",
+        "scope": 1548,
+        "sourceUnit": 4113,
+        "src": "63:47:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1512,
+              "name": "ERC1155Metadata",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4112,
+              "src": "148:15:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC1155Metadata_$4112",
+                "typeString": "contract ERC1155Metadata"
+              }
+            },
+            "id": 1513,
+            "nodeType": "InheritanceSpecifier",
+            "src": "148:15:14"
+          }
+        ],
+        "contractDependencies": [
+          4112
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1547,
+        "linearizedBaseContracts": [
+          1547,
+          4112
+        ],
+        "name": "ERC1155MetadataMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1524,
+              "nodeType": "Block",
+              "src": "495:59:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1521,
+                        "name": "_newBaseMetadataURI",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1515,
+                        "src": "528:19:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1518,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5024,
+                        "src": "502:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_ERC1155MetadataMock_$1547",
+                          "typeString": "contract super ERC1155MetadataMock"
+                        }
+                      },
+                      "id": 1520,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_setBaseMetadataURI",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4032,
+                      "src": "502:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 1522,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "502:46:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1523,
+                  "nodeType": "ExpressionStatement",
+                  "src": "502:46:14"
+                }
+              ]
+            },
+            "documentation": "@notice Will update the base URL of token's URI\n@param _newBaseMetadataURI New base URL of token's URI",
+            "id": 1525,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setBaseMetadataURI",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1515,
+                  "name": "_newBaseMetadataURI",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1525,
+                  "src": "453:33:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1514,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "453:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "452:35:14"
+            },
+            "returnParameters": {
+              "id": 1517,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "495:0:14"
+            },
+            "scope": 1547,
+            "src": "425:129:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1537,
+              "nodeType": "Block",
+              "src": "896:38:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1534,
+                        "name": "_tokenIDs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1528,
+                        "src": "918:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1531,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5024,
+                        "src": "903:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_ERC1155MetadataMock_$1547",
+                          "typeString": "contract super ERC1155MetadataMock"
+                        }
+                      },
+                      "id": 1533,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_logURIs",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4022,
+                      "src": "903:14:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256[] memory)"
+                      }
+                    },
+                    "id": 1535,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "903:25:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1536,
+                  "nodeType": "ExpressionStatement",
+                  "src": "903:25:14"
+                }
+              ]
+            },
+            "documentation": "@notice Will emit default URI log event for corresponding token _id\n@param _tokenIDs Array of IDs of tokens to log default URI",
+            "id": 1538,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "logURIsMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1528,
+                  "name": "_tokenIDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1538,
+                  "src": "861:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1526,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "861:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1527,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "861:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "860:28:14"
+            },
+            "returnParameters": {
+              "id": 1530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "896:0:14"
+            },
+            "scope": 1547,
+            "src": "840:94:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1545,
+              "nodeType": "Block",
+              "src": "1088:58:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "455243313135354d657461646174614d6f636b3a20494e56414c49445f4d4554484f44",
+                        "id": 1542,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1102:37:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6eae07edeb9b35d3be1e583f801a201410fcfe23eb21aaa403808ef33bdd25fb",
+                          "typeString": "literal_string \"ERC1155MetadataMock: INVALID_METHOD\""
+                        },
+                        "value": "ERC1155MetadataMock: INVALID_METHOD"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_6eae07edeb9b35d3be1e583f801a201410fcfe23eb21aaa403808ef33bdd25fb",
+                          "typeString": "literal_string \"ERC1155MetadataMock: INVALID_METHOD\""
+                        }
+                      ],
+                      "id": 1541,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4962,
+                        4963
+                      ],
+                      "referencedDeclaration": 4963,
+                      "src": "1095:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 1543,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1095:45:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1544,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1095:45:14"
+                }
+              ]
+            },
+            "documentation": "*********************************|\n|       Unsupported Functions       |\n|__________________________________",
+            "id": 1546,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1539,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1076:2:14"
+            },
+            "returnParameters": {
+              "id": 1540,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1088:0:14"
+            },
+            "scope": 1547,
+            "src": "1067:79:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1548,
+        "src": "116:1033:14"
+      }
+    ],
+    "src": "0:1149:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-05-19T21:47:00.133Z",
+  "devdoc": {
+    "methods": {
+      "logURIsMock(uint256[])": {
+        "params": {
+          "_tokenIDs": "Array of IDs of tokens to log default URI"
+        }
+      },
+      "setBaseMetadataURI(string)": {
+        "params": {
+          "_newBaseMetadataURI": "New base URL of token's URI"
+        }
+      },
+      "uri(uint256)": {
+        "details": "URIs are defined in RFC 3986.     URIs are assumed to be deterministically generated based on token ID     Token IDs are assumed to be represented in their hex format in URIs",
+        "return": "URI string"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "logURIsMock(uint256[])": {
+        "notice": "Will emit default URI log event for corresponding token _id"
+      },
+      "setBaseMetadataURI(string)": {
+        "notice": "Will update the base URL of token's URI"
+      },
+      "uri(uint256)": {
+        "notice": "A distinct Uniform Resource Identifier (URI) for a given token."
+      }
+    }
+  }
+}

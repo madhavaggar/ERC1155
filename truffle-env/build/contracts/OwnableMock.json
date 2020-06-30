@@ -1,0 +1,802 @@
+{
+  "contractName": "OwnableMock",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "ownerCall",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "nonOwnerCall",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"nonOwnerCall\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"ownerCall\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract that is ownable\",\"methods\":{\"transferOwnership(address)\":{\"params\":{\"_newOwner\":\"Address of the new owner\"}}}},\"userdoc\":{\"methods\":{\"owner()\":{\"notice\":\"Returns the address of the owner.\"},\"transferOwnership(address)\":{\"notice\":\"Transfers the ownership of the contract to new address\"}}}},\"settings\":{\"compilationTarget\":{\"/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/OwnableMock.sol\":\"OwnableMock\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/OwnableMock.sol\":{\"keccak256\":\"0x394bc2dafc1efe7e799d536a19ef34b627d8ce3f5fef16d96767dc9dd0bf18e3\",\"urls\":[\"bzz-raw://737eca11e18c204d8e84fdb9eabc2a621e5819e0e9abb53b9b9cc044d59b0611\",\"dweb:/ipfs/QmUprorJ919ZdPxfQY5V5skCBEaeFgUvdBLGycTfdJHFG9\"]},\"/C/Users/aggar/ERC1155/truffle-env/contracts/utils/Ownable.sol\":{\"keccak256\":\"0x412e1cb835a07a8dfbefa380b82fccb525ea1d44aa8d1c1ccdc96775ff8d3991\",\"urls\":[\"bzz-raw://69278e732f2d5c4c31d3dae0ce2afc781acf186f981f8a9498b93bf51f861da5\",\"dweb:/ipfs/QmVwwzAYhfC1QLA5qgCer3vm6nQMKNmw2DLvnoam6qFqbX\"]}},\"version\":1}",
+  "bytecode": "0x608060405260006001556000600255336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3610454806100d96000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063776e8c30146100515780638da5cb5b1461005b578063aae7aa4b146100a5578063f2fde38b146100af575b600080fd5b6100596100f3565b005b610063610106565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61012f565b005b6100f1600480360360208110156100c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101e6565b005b6001600260008282540192505081905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146101d4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806103fa6026913960400191505060405180910390fd5b60018060008282540192505081905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461028b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806103fa6026913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610311576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602a8152602001806103d0602a913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c65237472616e736665724f776e6572736869703a20494e56414c49445f414444524553534f776e61626c65236f6e6c794f776e65723a2053454e4445525f49535f4e4f545f4f574e4552a265627a7a723158208d60568973ef25480b34247406cf04d34eeb0423367f6ecc94fc2c6e0a7854be64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063776e8c30146100515780638da5cb5b1461005b578063aae7aa4b146100a5578063f2fde38b146100af575b600080fd5b6100596100f3565b005b610063610106565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61012f565b005b6100f1600480360360208110156100c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101e6565b005b6001600260008282540192505081905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146101d4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806103fa6026913960400191505060405180910390fd5b60018060008282540192505081905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461028b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806103fa6026913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610311576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602a8152602001806103d0602a913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c65237472616e736665724f776e6572736869703a20494e56414c49445f414444524553534f776e61626c65236f6e6c794f776e65723a2053454e4445525f49535f4e4f545f4f574e4552a265627a7a723158208d60568973ef25480b34247406cf04d34eeb0423367f6ecc94fc2c6e0a7854be64736f6c63430005100032",
+  "sourceMap": "108:273:19:-;;;179:1;145:35;;222:1;185:38;;528:10:27;518:7;;:20;;;;;;;;;;;;;;;;;;583:7;;;;;;;;;;;550:41;;579:1;550:41;;;;;;;;;;;;108:273:19;;;;;;",
+  "deployedSourceMap": "108:273:19:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;108:273:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;310:68;;;:::i;:::-;;1233:74:27;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;230::19;;;:::i;:::-;;933:232:27;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;933:232:27;;;;;;;;;;;;;;;;;;;:::i;:::-;;310:68:19;371:1;350:17;;:22;;;;;;;;;;;310:68::o;1233:74:27:-;1271:7;1294;;;;;;;;;;;1287:14;;1233:74;:::o;230::19:-;732:7:27;;;;;;;;;;;718:21;;:10;:21;;;710:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;297:1:19;279:14;;:19;;;;;;;;;;;230:74::o;933:232:27:-;732:7;;;;;;;;;;;718:21;;:10;:21;;;710:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1032:1;1011:23;;:9;:23;;;;1003:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1123:9;1093:40;;1114:7;;;;;;;;;;;1093:40;;;;;;;;;;;;1150:9;1140:7;;:19;;;;;;;;;;;;;;;;;;933:232;:::o",
+  "source": "pragma solidity ^0.5.14;\r\n\r\nimport \"../utils/Ownable.sol\";\r\n\r\n\r\n/**\r\n * @dev Contract that is ownable\r\n */\r\ncontract OwnableMock is Ownable {\r\n  uint256 internal mockStateOwner = 0;\r\n  uint256 internal mockStateNonOwner = 0;\r\n\r\n  function ownerCall() external onlyOwner() {\r\n    mockStateOwner += 1;\r\n  }\r\n\r\n  function nonOwnerCall() external {\r\n    mockStateNonOwner += 1;\r\n  }\r\n}",
+  "sourcePath": "C:\\Users\\aggar\\ERC1155\\truffle-env\\contracts\\mocks\\OwnableMock.sol",
+  "ast": {
+    "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/OwnableMock.sol",
+    "exportedSymbols": {
+      "OwnableMock": [
+        2818
+      ]
+    },
+    "id": 2819,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2790,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".14"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/utils/Ownable.sol",
+        "file": "../utils/Ownable.sol",
+        "id": 2791,
+        "nodeType": "ImportDirective",
+        "scope": 2819,
+        "sourceUnit": 4553,
+        "src": "28:30:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2792,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4552,
+              "src": "132:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$4552",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 2793,
+            "nodeType": "InheritanceSpecifier",
+            "src": "132:7:19"
+          }
+        ],
+        "contractDependencies": [
+          4552
+        ],
+        "contractKind": "contract",
+        "documentation": "@dev Contract that is ownable",
+        "fullyImplemented": true,
+        "id": 2818,
+        "linearizedBaseContracts": [
+          2818,
+          4552
+        ],
+        "name": "OwnableMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2796,
+            "name": "mockStateOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2818,
+            "src": "145:35:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2794,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "145:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 2795,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "179:1:19",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2799,
+            "name": "mockStateNonOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2818,
+            "src": "185:38:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2797,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "185:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 2798,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "222:1:19",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2808,
+              "nodeType": "Block",
+              "src": "272:32:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2806,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2804,
+                      "name": "mockStateOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2796,
+                      "src": "279:14:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 2805,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "297:1:19",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "279:19:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2807,
+                  "nodeType": "ExpressionStatement",
+                  "src": "279:19:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2809,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 2802,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2801,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 4517,
+                  "src": "260:9:19",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "260:11:19"
+              }
+            ],
+            "name": "ownerCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2800,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "248:2:19"
+            },
+            "returnParameters": {
+              "id": 2803,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "272:0:19"
+            },
+            "scope": 2818,
+            "src": "230:74:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2816,
+              "nodeType": "Block",
+              "src": "343:35:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2814,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2812,
+                      "name": "mockStateNonOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2799,
+                      "src": "350:17:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 2813,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "371:1:19",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "350:22:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2815,
+                  "nodeType": "ExpressionStatement",
+                  "src": "350:22:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2817,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nonOwnerCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2810,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "331:2:19"
+            },
+            "returnParameters": {
+              "id": 2811,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "343:0:19"
+            },
+            "scope": 2818,
+            "src": "310:68:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2819,
+        "src": "108:273:19"
+      }
+    ],
+    "src": "0:381:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/mocks/OwnableMock.sol",
+    "exportedSymbols": {
+      "OwnableMock": [
+        2818
+      ]
+    },
+    "id": 2819,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2790,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".14"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "absolutePath": "/C/Users/aggar/ERC1155/truffle-env/contracts/utils/Ownable.sol",
+        "file": "../utils/Ownable.sol",
+        "id": 2791,
+        "nodeType": "ImportDirective",
+        "scope": 2819,
+        "sourceUnit": 4553,
+        "src": "28:30:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2792,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4552,
+              "src": "132:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$4552",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 2793,
+            "nodeType": "InheritanceSpecifier",
+            "src": "132:7:19"
+          }
+        ],
+        "contractDependencies": [
+          4552
+        ],
+        "contractKind": "contract",
+        "documentation": "@dev Contract that is ownable",
+        "fullyImplemented": true,
+        "id": 2818,
+        "linearizedBaseContracts": [
+          2818,
+          4552
+        ],
+        "name": "OwnableMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2796,
+            "name": "mockStateOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2818,
+            "src": "145:35:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2794,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "145:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 2795,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "179:1:19",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2799,
+            "name": "mockStateNonOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 2818,
+            "src": "185:38:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2797,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "185:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 2798,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "222:1:19",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2808,
+              "nodeType": "Block",
+              "src": "272:32:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2806,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2804,
+                      "name": "mockStateOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2796,
+                      "src": "279:14:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 2805,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "297:1:19",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "279:19:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2807,
+                  "nodeType": "ExpressionStatement",
+                  "src": "279:19:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2809,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 2802,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2801,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 4517,
+                  "src": "260:9:19",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "260:11:19"
+              }
+            ],
+            "name": "ownerCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2800,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "248:2:19"
+            },
+            "returnParameters": {
+              "id": 2803,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "272:0:19"
+            },
+            "scope": 2818,
+            "src": "230:74:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2816,
+              "nodeType": "Block",
+              "src": "343:35:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2814,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2812,
+                      "name": "mockStateNonOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2799,
+                      "src": "350:17:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 2813,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "371:1:19",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "350:22:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2815,
+                  "nodeType": "ExpressionStatement",
+                  "src": "350:22:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2817,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nonOwnerCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2810,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "331:2:19"
+            },
+            "returnParameters": {
+              "id": 2811,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "343:0:19"
+            },
+            "scope": 2818,
+            "src": "310:68:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2819,
+        "src": "108:273:19"
+      }
+    ],
+    "src": "0:381:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-05-19T21:47:00.176Z",
+  "devdoc": {
+    "details": "Contract that is ownable",
+    "methods": {
+      "transferOwnership(address)": {
+        "params": {
+          "_newOwner": "Address of the new owner"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "owner()": {
+        "notice": "Returns the address of the owner."
+      },
+      "transferOwnership(address)": {
+        "notice": "Transfers the ownership of the contract to new address"
+      }
+    }
+  }
+}
